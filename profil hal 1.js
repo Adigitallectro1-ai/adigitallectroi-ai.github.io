@@ -25,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize Terminal
 function initTerminal() {
     // Type the name animation
-    typeText("Bos - Linux Enthusiast & Web Learner", typedName);
     typeText("MASTER - Linux Enthusiast & Web Learner", typedName);
     
     // Focus on input
