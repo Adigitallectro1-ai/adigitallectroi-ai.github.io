@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bos@manjaro:~ - Linux Enthusiast & Web Learner</title>
+    <link rel="stylesheet" href="profil hal 1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Noise Overlay untuk efek terminal -->
+    <div class="noise-overlay"></div>
+    
+    <!-- Main Terminal Window -->
+    <main class="terminal">
+        <!-- Terminal Header -->
+        <div class="terminal-header">
+            <div class="terminal-buttons">
+                <button class="close-btn" title="Close"></button>
+                <button class="minimize-btn" title="Minimize"></button>
+                <button class="maximize-btn" title="Maximize"></button>
+            </div>
+            <div class="terminal-title">bos@manjaro: ~</div>
+        </div>
+        
+        <!-- Terminal Content -->
+        <div class="terminal-content" id="terminal-output">
+            <!-- Welcome Message -->
+            <div class="command-line">
+                <span class="prompt">bos@manjaro<span class="prompt-symbol">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span></span>
+                <span class="command">whoami</span>
+            </div>
+            <div class="output" id="whoami-output">
+                <span class="typing-text" id="typed-name"></span><span class="blinking-cursor">▌</span>
+            </div>
+            
+            <!-- Help Command Output -->
+            <div class="command-line">
+                <span class="prompt">bos@manjaro<span class="prompt-symbol">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span></span>
+                <span class="command">help</span>
+            </div>
+            <div class="output">
+                <pre class="help-menu">
+Available commands:
+<span class="command-list">ls</span>          - Show directory listing (navigation)
+<span class="command-list">cat about.txt</span> - About me section
+<span class="command-list">neofetch</span>     - Display system/skills info
+<span class="command-list">tree projects/</span> - View projects
+<span class="command-list">./contact.sh</span> - Contact information
+<span class="command-list">clear</span>        - Clear terminal
+<span class="command-list">theme</span>        - Toggle dark/light mode
+<span class="command-list">help</span>         - Show this help menu
+                </pre>
+            </div>
+            
+            <!-- Directory Listing (Navigation) -->
+            <div class="command-line">
+                <span class="prompt">bos@manjaro<span class="prompt-symbol">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span></span>
+                <span class="command">ls -la</span>
+            </div>
+            <div class="output">
+                <div class="directory-listing">
+                    <div class="file-item" data-command="cat about.txt">
+                        <i class="fas fa-file-alt"></i> about.txt
+                    </div>
+                    <div class="dir-item" data-command="tree projects/">
+                        <i class="fas fa-folder"></i> projects/
+                    </div>
+                    <div class="dir-item" data-command="neofetch">
+                        <i class="fas fa-folder"></i> skills/
+                    </div>
+                    <div class="file-item executable" data-command="./contact.sh">
+                        <i class="fas fa-file-code"></i> contact.sh
+                    </div>
+                    <div class="dir-item" data-command="cat blog.txt">
+                        <i class="fas fa-folder"></i> blog/
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Input Line (Current Command) -->
+            <div class="command-line current-line">
+                <span class="prompt">bos@manjaro<span class="prompt-symbol">:</span><span class="prompt-path">~</span><span class="prompt-symbol">$</span></span>
+                <input type="text" class="command-input" id="command-input" autocomplete="off" autofocus 
+                       placeholder="Ketik 'help' untuk melihat command yang tersedia">
+            </div>
+        </div>
+        
+        <!-- Terminal Footer -->
+        <div class="terminal-footer">
+            <div class="status-bar">
+                <span class="status-item"><i class="fas fa-code-branch"></i> main</span>
+                <span class="status-item"><i class="fas fa-memory"></i> 80%</span>
+                <span class="status-item" id="current-time">00:00:00</span>
+                <span class="status-item" id="terminal-theme">🌙 Dark</span>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Modal untuk Project Details -->
+    <div class="modal" id="project-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="modal-title">projects/</span>
+                <button class="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Konten akan diisi oleh JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="profil hal 1.js"></script>
+</body>
+</html>
